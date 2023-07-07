@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/logoDestinos.png">
+    <title>Destinos Express – Servicio empresarial, ejecutivo y turístico</title>
+    <!-- Estilos de carpeta css -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fonts de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="body">
+    <header class="header__menu relative">
+        <div class="header__container container flex-between ">
+            <picture class="header__logo">
+                <img src="/images/logoDestinos.png" alt="logoDestinos" title="Destinos Express" class="logo__img">
+            </picture>
+
+            <nav class="nav__header flex-center">
+                <h2 class="header__title">Destinos Express</h2>
+                <ul class="nav__list grid-content">
+                    <li class="nav__item">
+                        <a href="#" class="nav__link link__servicios">
+                            <img src="images/iconServicios.png" class="icon__services" alt="">
+                            Servicios
+                            <img src="images/icon-arrow.svg" id="arrow" class="icon__arrow" alt="">
+                        </a>
+                        <ul class="link__servicios--drop">
+                            <li class="nav__item"><a href="#" class="nav__link">Transporte Empresarial</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Transporte Ingeniería y petroleras</a>
+                            </li>
+                            <li class="nav__item"><a href="#" class="nav__link">Mensaje Empresarial</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item"><a href="#" class="nav__link">
+                            <img src="images/iconContacto.png" class="icon__services" alt="">
+                            Contacto</a>
+                    </li>
+                    <li class="nav__item"><a href="#" class="nav__link">
+                            <img src="images/iconTrabajaConNosotros.png" class="icon__services" alt="">
+                            Trabaja con nosotros</a>
+                    </li>
+                </ul>
+
+                <div class="formularios__container">
+                    <!-- FORMULARIO DE RESERVA -->
+                    <a href="#" class="btn btn-reserva" id="reserva">Reservar</a>
+                    <a href="#" class="btn btns" id="linea-honesta">Línea Honesta</a>
+                    <a href="https://clientesdestinos.tmovil.co/js/" class="btn btns" target="_blank">Afiliados</a>
+                </div>
+
+                <!-- MODAL DE RESERVA -->
+
+                <div class="modal__reserva">
+
+                    <div class="modal__reserva--container">
+                        <h2 class="reserva__title center">Bienvenido(a)</h2>
+                        <p class="reserva__paragraph center">Aquí puedes reservar, deja tu datos y atenderemos tu
+                            solicitud</p>
+                        <form action="#" method="post" class="form__reserva">
+                            <!-- ENTRADA DE TEXTO NOMBRE USUARIO -->
+                            <label class="labels" for="name" id="name-label">Nombre</label>
+                            <input class="inputs" type="text" name="name" id="name" placeholder="Escribe tu nombre"
+                                required>
+                            <!-- ENTRADA DE SELECCION TIPO DE SERVICIO -->
+                            <label class="labels" for="services" id="services-label">Tipo De Servicio</label>
+                            <select class="selected" name="services" id="services" required>
+                                <option value="">Seleccione Servicio</option>
+                                <option value="ejecutivo">Ejecutivo</option>
+                                <option value="empresarial">Empresarial</option>
+                                <option value="normal">Normal</option>
+                            </select>
+                            <!-- ENTRADA DE FECHA Y HORA -->
+                            <label class="labels" for="datetime" id="datetime-label">Fecha y Hora</label>
+                            <input class="inputs" type="datetime-local" name="datetime" id="datetime" required>
+                            <!-- ENTRADA DE TELEFONO -->
+                            <label class="labels" for="phone" id="phone-label">Celular</label>
+                            <input class="inputs" type="tel" name="phone" id="phone" placeholder="Número de celular"
+                                required>
+                            <!-- ENTRADA DE SELECCION TIPO VEHICULO -->
+                            <label class="labels" for="vehiculo" id="vehiculo-label">Tipo De Vehículo</label>
+                            <select class="selected" name="vehiculo" id="vehiculo" required>
+                                <option value="">Seleccione Vehículo</option>
+                                <option value="camionetas">Camionetas</option>
+                                <option value="dobleCabina">Doble Cabina</option>
+                                <option value="miniVan">Mini Van</option>
+                                <option value="vans">Vans</option>
+                                <option value="Buses">Buses</option>
+                            </select>
+                            <!-- ENTRADA DE DESTINO -->
+                            <label class="labels" for="destino" id="destino-label">Destino</label>
+                            <input class="inputs" type="text" name="destino" id="destino"
+                                placeholder="Escribe tu destino" required>
+                            <!-- ENTRADA DE EMAIL -->
+                            <label class="labels" for="email" id="email-label">Email</label>
+                            <input class="inputs" type="email" name="email" id="email" placeholder="Escribe tu email"
+                                required>
+                            <!-- ENTRADA DE CIUDAD -->
+                            <label class="labels" for="ciudad" id="ciudad-label">Ciudad</label>
+                            <input class="inputs" type="text" name="ciudad" id="ciudad" placeholder="Escribe tu ciudad"
+                                required>
+                            <!-- ENTRADA DE ITINERARIO DE VUELO -->
+                            <label class="labels" for="itirenario" id="itirenario-label">Itinerario de vuelo</label>
+                            <input class="inputs" type="text" name="itirenario" id="itirenario"
+                                placeholder="Escribe tu itirenario" required>
+                            <!-- ENTRADA DE EMPRESA -->
+                            <label class="labels" for="Empresa" id="Empresa-label">Empresa</label>
+                            <input class="inputs" type="text" name="Empresa" id="Empresa"
+                                placeholder="Escribe tu Empresa" required>
+                            <!-- ENTRADA DE DIRECCION -->
+                            <label class="labels" for="direccion" id="direccion-label">Dirección</label>
+                            <input class="inputs" type="tel" name="direccion" id="direccion"
+                                placeholder="Escribe tu direccion" required>
+                            <!-- ENTRADA DE COMENTARIOS -->
+                            <label class="labels" for="comentarios" id="comentarios-label">Comentarios</label>
+                            <textarea class="textarea" name="comentarios" id="comentarios"
+                                placeholder="Escribe tus comentarios" rows="4" required></textarea>
+
+                            <!-- BOTON COTIZACIÓN -->
+                            <input type="submit" value="Solicitar cotización" class="btn btn-reserva btn-cotizar">
+                        </form>
+
+                        <a href="#" class="close__modal">
+                            <img src="images/icon-close-modal.svg" alt="icon-close" tiitle="Cerrar" id="close-modal"
+                                class="close__modal--icon">
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- MODAL DE LÍNEA HONESTA -->
+
+                <div class="modal__reserva" id="modal-honesta">
+
+                    <div class="modal__reserva--container">
+                        <h2 class="reserva__title center">Línea honesta</h2>
+                        <p class="reserva__paragraph center">Denuncias relacionadas con conductas deshonestas</p>
+                        <form action="#" method="post" class="form__reserva">
+
+                            <!-- ENTRADA DE SELECCION TIPO DE SERVICIO -->
+                            <label class="labels" for="asunto" id="asunto-label">Asunto</label>
+                            <select class="selected" name="asunto" id="asunto" required>
+                                <option value="">Apropiación de recursos</option>
+                                <option value="solicitud">Solicitud de dinero para cierre</option>
+                                <option value="conflictos">Conflicto de intereses</option>
+                                <option value="falsedad">Falsedad de información</option>
+                            </select>
+                            <!-- ENTRADA DE FECHA Y HORA -->
+                            <label class="labels" for="datetime" id="datetime-label">Fecha y Hora</label>
+                            <input class="inputs" type="datetime-local" name="datetime" id="datetime" required>
+
+                            <!-- ENTRADA DE SELECCION INVOLUCRADO -->
+                            <label class="labels" for="involucrado" id="involucrado-label">Involucrado</label>
+                            <select class="selected" name="involucrado" id="involucrado" required>
+                                <option value="">Seleccione Cliente</option>
+                                <option value="provedor">Provedor</option>
+                                <option value="aliado">Aliado</option>
+                                <option value="conductor">Conductor</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                            <!-- ENTRADA DE CARGO/NOMBRE INVOLUCRADO -->
+                            <label class="labels" for="cargo" id="cargo-label">Nombre y/o cargo del involucrado</label>
+                            <input class="inputs" type="text" name="cargo" id="cargo" placeholder="Escribe el cargo"
+                                required>
+
+                            <!-- ENTRADA DE LUGAR DE LOS HECHOS -->
+                            <label class="labels" for="ocurrido" id="ocurrido-label">¿Dónde Ocurrió?</label>
+                            <input class="inputs" type="text" name="ocurrido" id="ocurrido"
+                                placeholder="Escribe dónde ocurrió" required>
+
+                            <!-- ENTRADA DE COMENTARIOS -->
+                            <label class="labels" for="situacion" id="situacion-label">Descripción de la
+                                situación</label>
+                            <textarea class="textarea" name="situacion" id="situacion"
+                                placeholder="Escribe tu situación" rows="4" required></textarea>
+
+                            <!-- ENTRADA DE ARCHIVO -->
+                            <label for="file" class="labels" id="file-label">Seleccionar archivo</label>
+                            <input type="file" name="file" id="file" accept=".jpg, .png, .pdf" required>
+
+                           <!-- ENTRADA DE DECISION -->
+                           <label for="checkbox" class="checkbox-lab" id="checkbox-label">
+                            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox" required>
+                            ¿Desea ser contactado(a)
+                            </label>
+
+                            <!-- ENTRADA DE TEXTO NOMBRE USUARIO -->
+                            <label class="labels" for="name" id="name-label">Name</label>
+                            <input class="inputs" type="text" name="name" id="name" placeholder="Escribe tu nombre"
+                                required>
+
+                            <!-- ENTRADA DE TELEFONO -->
+                            <label class="labels" for="phone" id="phone-label">Celular</label>
+                            <input class="inputs" type="tel" name="phone" id="phone" placeholder="Número de celular"
+                                required>
+
+                            <!-- ENTRADA DE EMAIL -->
+                            <label class="labels" for="email" id="email-label">Email</label>
+                            <input class="inputs" type="email" name="email" id="email" placeholder="Escribe tu email"
+                                required>
+
+                            <!-- ENTRADA DE DECISION -->
+                            <label for="checkbox" class="checkbox-lab" id="checkbox-label">
+                            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox" required>
+                            Estoy de acuerdo con los términos y condiciones
+                            </label>
+
+                            <!-- BOTON COTIZACIÓN -->
+                            <input type="submit" value="Enviar Reporte" class="btn btn-reserva btn-cotizar">
+                        </form>
+
+                        <a href="#" class="close__modal" id="close__modal--honesta">
+                            <img src="images/icon-close-modal.svg" alt="icon-close" tiitle="Cerrar" id="close-modal"
+                                class="close__modal--icon">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+
+            <a href="#" class="box__model" id="hamburger">
+                <img src="images/icon-hamburger.svg" alt="icon-hamburger" class="icon__hamburger" title="Menú">
+            </a>
+        </div>
+    </header>
+
+    <main class="main container">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non magni maxime architecto! Sunt saepe
+        aliquid asperiores accusamus! Placeat officia voluptatum ipsum et, eligendi saepe debitis ratione velit illo
+        culpa.
+        Sequi accusamus distinctio nemo mollitia accusantium? Consequuntur, excepturi. Deleniti quasi aspernatur optio
+        iusto, neque sit sequi? Minus incidunt maiores assumenda illum, obcaecati ipsa officia, voluptatem, at
+        repudiandae commodi quos beatae.
+        Temporibus ex debitis ut molestiae vel officia itaque quo delectus non consectetur labore at quia repudiandae,
+        minus cum ipsam, nisi, error fugit beatae corporis nam in? Illum corrupti odio ab?
+        Est aliquam alias, earum neque commodi ex ea voluptas, excepturi soluta perspiciatis tempora distinctio quo iste
+        suscipit odit repellat! Distinctio voluptas veritatis nesciunt? Unde atque error iusto quam at laboriosam?
+        Numquam delectus facere quam sapiente modi nam perspiciatis. Aliquid excepturi illum molestiae eaque eligendi
+        non sint cupiditate ipsam rerum, earum, corporis accusantium consequuntur suscipit fugiat perferendis libero quo
+        iure quas.
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

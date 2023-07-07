@@ -1,0 +1,324 @@
+/* Definimos variables para estilos */
+:root {
+    --ff-Montserrat: 'Montserrat', sans-serif;
+    --ff-Poppins: 'Poppins', sans-serif;
+    --VeryDark: hsl(0, 0%, 20%);
+    --LightDark: hsla(0, 0%, 0%, 0.116);
+    --VeryYellow: hsl(40, 100%, 64%);
+    --Yellow: hsl(33, 100%, 55%);
+    --Darkgray: hsla(0, 0%, 48%, 0.151);
+    --Black: hsl(0, 8%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --PaddingContent: 3.72rem 0;
+    --Gap: 1rem;
+
+}
+
+
+body {
+    box-sizing: border-box;
+    font-family: var(--ff-Poppins);
+    font-size: .95em;
+}
+
+
+/* Creo estilos predeterminados */
+
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    --Gap: 2rem;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-content {
+    display: grid;
+    gap: 2rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.relative {
+    position: relative;
+}
+
+/* Estilo header menu */
+
+.header__menu {
+    background-color: var(--Black);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: .7rem 0;
+}
+
+.header__logo {
+    width: 50px;
+}
+
+
+
+
+.nav__header {
+    box-sizing: border-box;
+    background-color: var(--Black);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 80%;
+    clip-path: circle(0.0% at 100% 0);
+    transition: clip-path .5s;    
+}
+
+.nav__header--active {
+    border-radius: 2rem 0rem 0rem 2rem;
+    clip-path: circle(141.2% at 0 100%);
+    transition: clip-path 1s;
+    filter: drop-shadow(2px 2px 3px #cacaca);
+}
+
+
+.nav__list {
+    position: absolute;
+    top: 8%;
+    width: 80%;
+    margin-top: 1.5rem;
+}
+
+.box__model {
+    z-index: 99;
+}
+
+.filters {
+    transition: filter .6s ease-in-out;
+    filter: blur(1px) brightness(60%) saturate(120%);
+    background-color: var(--LightDark);
+}
+
+
+/* Nav mobile */
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    color: var(--White);
+    transition: color .6s;
+}
+
+.nav__item{
+    padding: .6rem 0;
+}
+
+.nav__list li:nth-child(-n+2){
+    border-bottom: 1px solid var(--Darkgray);
+}
+
+.icon__services{
+    width: 25px;
+}
+
+.icon__arrow {
+    width: 13px;
+}
+
+.icon__arrow {
+    transition: transform .5s;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.link__servicios--drop {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;
+    padding: .5rem 0 .5rem 2rem;
+    
+}
+
+.link__servicios--drop .nav__link {
+    font-size: .9em;
+    
+}
+
+.link__servicios--drop.show {
+    opacity: 1;
+    max-height: 300px;
+    transition-delay: 0.1s; /* Agrega un pequeño retraso a la transición de entrada */
+}
+
+.nav__link:hover{
+    color: var(--VeryYellow) !important;
+}
+
+.header__title{
+    color: var(--Yellow);
+    font-family: var(--ff-Montserrat);
+    font-weight: 700;
+    z-index: 99;
+    position: absolute;
+    top: 3%;
+    font-size: 1.2em;
+    left: 10%;
+    text-transform: uppercase;
+}
+
+
+/* Formularios de reservar */
+.formularios__container{
+    width: 80%;
+    display: grid;
+    place-self: end;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    
+}
+
+.btn{
+    padding: 1rem;
+    justify-content: start;
+    border-radius: .5rem;
+    color: var(--Black);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1em;
+    font-family: var(--ff-Montserrat);
+}
+
+.btn-reserva{
+    background-color: var(--Yellow);
+}
+
+.btns{
+    color: var(--White);
+    border: 1px solid var(--VeryYellow);
+}
+
+/* MODAL DE BOTON RESERVAR */
+
+.modal__reserva{
+    background-color: var(--White);
+    position: fixed;
+    top: 20px;
+    bottom: 20px;
+    z-index: 199;
+    left: -60px;
+    right: 18px;
+    border-radius: .5rem;
+    padding: 3rem 2rem;
+    filter: drop-shadow(2px 2px 4px #1b1b1b81);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s 0.5s;
+    transform: translateY(-100vh);
+    transition: transform 0.5s;
+    overflow-y: auto;
+}
+
+
+.modal__reserva--show{
+    opacity: 1;
+    transition: opacity 0.5s 0.3s;
+    pointer-events: unset;
+    transform: translateY(0vh);
+    transition: transform .5s ;
+    z-index: 999;
+}
+
+
+.close__modal--icon{
+    width: 20px;
+    position: absolute;
+    top: 2.5%;
+    right: 5%;
+}
+
+.inputs,
+.selected,
+.textarea{
+    border: 1px solid #929292;
+    padding: .5rem;
+    border-radius: .3rem;
+}
+
+.labels{
+    font-weight: 600;
+    font-family: var(--ff-Montserrat);
+    position: relative;
+    top: 10px;
+    background-color: var(--Darkgray);
+    padding: .3rem;
+    width: 150px;
+    border-radius: .2rem;
+}
+
+.form__reserva{
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-cotizar{
+    border: none;
+    margin-top: 1.4rem;
+}
+
+.reserva__title{
+    font-family: var(--ff-Montserrat);
+}
+
+
+
+.selected option{
+    color: var(--VeryDark);
+    font-size:.85em;
+}
+
+.checkbox{
+    border: 1px solid var(--Yellow);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: .3rem 0 .2rem 0;
+}
+.checkbox:checked{
+    transition: .7s ease-in-out;
+    background-color: hsl(28, 87%, 62%);
+}
+
+.checkbox-lab{
+    display: flex;
+    align-items: start;
+    gap: .3rem;
+    font-size: .89em;
+}
+
+/* MAIN */
+
+.main {
+    position: relative;
+    z-index: -9;
+    background-color: transparent;
+    top: 100px;
+}
