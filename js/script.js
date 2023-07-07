@@ -240,7 +240,7 @@ function changeColorIcons(){
 
     iconClose.forEach((closeIcon) => {
         closeIcon.addEventListener('mouseover', () => {
-            closeIcon.setAttribute('src', '../images/icon-close-red.svg');
+            closeIcon.setAttribute('src', './images/icon-close-red.svg');
             closeIcon.classList.add('icon-close-active');
         });
         closeIcon.addEventListener('mouseout', () => {
