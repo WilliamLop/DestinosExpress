@@ -53,6 +53,7 @@ window.addEventListener('resize', () => {
     if (isMenuActive) {
         navMenu.classList.remove('nav__header--active');
         iconHamburger.setAttribute('src', './images/icon-hamburger.svg');
+        navContainer.style.backgroundColor = 'transparent';
         filtersRemove();
     }
 });
@@ -104,6 +105,7 @@ function toggleDropdown() {
 // Evento para visualizar el dropdown
 serviciosContainer.addEventListener('mouseenter', () => {
     showDropdown();
+    navList.classList.add('margin');
 });
 
 // Evento para ocultar el dropdown 
@@ -127,8 +129,7 @@ serviciosLink.addEventListener('touchstart', (event) => {
     event.preventDefault();
     if (isMobile) {
         toggleDropdown();
-    }
-    
+    }    
 });
 
 document.addEventListener('click', (event) => {
@@ -152,6 +153,7 @@ const closeModal = document.getElementById('close-modal');
 const closeModalHonesta = document.getElementById('close__modal--honesta');
 const reservar = document.getElementById('reserva');
 const lineaHonesta = document.getElementById('linea-honesta');
+const modalContent = document.querySelector('.modal__reserva--container');
 console.log(modalHonesta);
 
 
