@@ -8,8 +8,6 @@ const titleDestinos = document.querySelector('.header__title');
 const main = document.querySelector('.main');
 const navContainer = document.querySelector('.nav__container');
 
-console.log(iconHamburger);
-
 
 // Creo evento para abrir y cerrar el menu mobile
 
@@ -29,6 +27,7 @@ hamburgerLink.addEventListener('click', (e) => {
         navContainer.style.backgroundColor = 'transparent';
     }
 });
+
 
 //Función para añadir filtros
 function filtersAdd() {
@@ -154,33 +153,59 @@ const closeModalHonesta = document.getElementById('close__modal--honesta');
 const reservar = document.getElementById('reserva');
 const lineaHonesta = document.getElementById('linea-honesta');
 const modalContent = document.querySelector('.modal__reserva--container');
-console.log(modalHonesta);
 
 
+// Funcion para abrir modal con click
+function modalClicks(){
+    reservar.addEventListener('click', () => {
+        modal.classList.add('modal__reserva--show');
+    });
+    
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('modal__reserva--show');
+    });
 
-reservar.addEventListener('touchstart', () => {
-    modal.classList.add('modal__reserva--show');
-});
+    lineaHonesta.addEventListener('click', () => {
+        modalHonesta.classList.add('modal__reserva--show');
+    });
+    
+    closeModalHonesta.addEventListener('click', () => {
+        modalHonesta.classList.remove('modal__reserva--show');
+    });
 
-closeModal.addEventListener('touchstart', () => {
-    modal.classList.remove('modal__reserva--show');
-});
+}
 
-lineaHonesta.addEventListener('touchstart', () => {
-    modalHonesta.classList.add('modal__reserva--show');
-});
+// Funcion para abrir modal con touch
+function modalTouch(){
+    reservar.addEventListener('touchstart', () => {
+        modal.classList.add('modal__reserva--show');
+    });
+    
+    closeModal.addEventListener('touchstart', () => {
+        modal.classList.remove('modal__reserva--show');
+    });
+    
+    lineaHonesta.addEventListener('touchstart', () => {
+        modalHonesta.classList.add('modal__reserva--show');
+    });
+    
+    closeModalHonesta.addEventListener('touchstart', () => {
+        modalHonesta.classList.remove('modal__reserva--show');
+    });
+    
+    navContainer.addEventListener('touchstart', (event) => {
+        event.stopPropagation();
+    });
+    
+    modalContent.addEventListener('touchstart', (event) => {
+        event.stopPropagation();
+    });
+}
 
-closeModalHonesta.addEventListener('touchstart', () => {
-    modalHonesta.classList.remove('modal__reserva--show');
-});
+modalClicks();
+modalTouch();
 
-navContainer.addEventListener('touchstart', (event) => {
-    event.stopPropagation();
-});
 
-modalContent.addEventListener('touchstart', (event) => {
-    event.stopPropagation();
-});
 
 
 const btnCotizar = document.getElementById('btn-cotizar');
@@ -188,3 +213,42 @@ const btnCotizar = document.getElementById('btn-cotizar');
 btnCotizar.addEventListener('click', (event) => {
     alert('Cotizar');
 });
+
+const inputs = document.querySelectorAll('.inputs');
+console.log(inputs);
+
+inputs.forEach((input) => {
+    input.addEventListener("focus", () => {
+        navContainer.removeEventListener('touchstart', stopPropagation);
+    });
+
+    input.addEventListener("blur", () => {
+        navContainer.removeEventListener('touchstart', stopPropagation);
+    });
+});
+
+function stopPropagation(e) {
+    e.stopPropagation();
+}
+
+
+// Metodo para cambiar el color de los iconos
+
+function changeColorIcons(){
+
+    const iconClose = document.querySelectorAll('.close__modal--icon');
+
+    iconClose.forEach((closeIcon) => {
+        closeIcon.addEventListener('mouseover', () => {
+            closeIcon.setAttribute('src', '../images/icon-close-red.svg');
+            closeIcon.classList.add('icon-close-active');
+        });
+        closeIcon.addEventListener('mouseout', () => {
+            closeIcon.setAttribute('src', './images/icon-close-modal.svg');
+            closeIcon.classList.remove('icon-close-active');
+        });
+    });
+
+}
+
+changeColorIcons();
