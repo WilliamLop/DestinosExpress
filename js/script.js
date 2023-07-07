@@ -22,6 +22,7 @@ hamburgerLink.addEventListener('click', (e) => {
     } else {
         iconHamburger.setAttribute('src', './images/icon-hamburger.svg');
         filtersRemove();
+        modal.classList.remove('modal__reserva--show')
     }
 });
 
@@ -29,6 +30,7 @@ hamburgerLink.addEventListener('click', (e) => {
 function filtersAdd() {
     logo.classList.add('filters');
     main.classList.add('filters');
+
 }
 
 //Función para remover filtros
@@ -162,4 +164,15 @@ lineaHonesta.addEventListener('click', () => {
 
 closeModalHonesta.addEventListener('click', () => {
     modalHonesta.classList.remove('modal__reserva--show');
+});
+
+
+reservar.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del evento touchstart
+    modal.classList.add('modal__reserva--show');
+});
+
+lineaHonesta.addEventListener('touchstart', (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del evento touchstart
+    modalHonesta.classList.add('modal__reserva--show');
 });
