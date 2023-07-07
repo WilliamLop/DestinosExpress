@@ -232,6 +232,10 @@ body {
     padding: .9rem 0;    
 }
 
+#btn-cotizar{
+    pointer-events: auto;
+}
+
 
 /* MODAL DE BOTON RESERVAR */
 

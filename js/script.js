@@ -166,10 +166,25 @@ closeModal.addEventListener('touchstart', () => {
     modal.classList.remove('modal__reserva--show');
 });
 
+lineaHonesta.addEventListener('touchstart', () => {
+    modalHonesta.classList.add('modal__reserva--show');
+});
+
+closeModalHonesta.addEventListener('touchstart', () => {
+    modalHonesta.classList.remove('modal__reserva--show');
+});
+
 navContainer.addEventListener('touchstart', (event) => {
     event.stopPropagation();
 });
 
 modalContent.addEventListener('touchstart', (event) => {
     event.stopPropagation();
+});
+
+
+const btnCotizar = document.getElementById('btn-cotizar');
+
+btnCotizar.addEventListener('click', (event) => {
+    alert('Cotizar');
 });
