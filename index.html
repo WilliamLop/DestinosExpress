@@ -20,11 +20,12 @@
 <body>
     <header class="header__menu relative">
         <div class="header__container container flex-between ">
-            <!-- <picture class="header__logo"> -->
-                <img src="images/logoDestinos.png" alt="logoDestinos" title="Destinos Express" class="logo__img">
-            <!-- </picture> -->
+
+            <!-- LOGO -->
+            <img src="images/logoDestinos.png" alt="logoDestinos" title="Destinos Express" class="logo__img">
 
             <div class="nav__container">
+                <!-- NAV -->
                 <nav class="nav__header">
                     <h2 class="header__title">Destinos Express</h2>
 
@@ -62,15 +63,14 @@
                     </div>
     
                 </nav>
+
                 <!-- MODAL DE RESERVA -->
-
-                <div class="modal__reserva">
-
+                <div class="modal__reserva" id="modal-reserva">
                     <div class="modal__reserva--container">
                         <h2 class="reserva__title center">Bienvenido(a)</h2>
                         <p class="reserva__paragraph center">Aquí puedes reservar, deja tu datos y atenderemos tu
                             solicitud</p>
-                        <form action="#" method="post" class="form__reserva">
+                        <form action="" class="form__reserva">
                             <!-- ENTRADA DE TEXTO NOMBRE USUARIO -->
                             <label class="labels" for="name" id="name-label">Nombre</label>
                             <input class="inputs" type="text" name="name" id="name" placeholder="Escribe tu nombre"
@@ -88,8 +88,7 @@
                             <input class="inputs" type="datetime-local" name="datetime" id="datetime" required>
                             <!-- ENTRADA DE TELEFONO -->
                             <label class="labels" for="phone" id="phone-label">Celular</label>
-                            <input class="inputs" type="tel" name="phone" id="phone" placeholder="Número de celular"
-                                required>
+                            <input class="inputs"  type="tel" name="phone" id="phone" placeholder="Número de celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" required>
                             <!-- ENTRADA DE SELECCION TIPO VEHICULO -->
                             <label class="labels" for="vehiculo" id="vehiculo-label">Tipo De Vehículo</label>
                             <select class="selected" name="vehiculo" id="vehiculo" required>
@@ -122,12 +121,12 @@
                                 placeholder="Escribe tu Empresa" required>
                             <!-- ENTRADA DE DIRECCION -->
                             <label class="labels" for="direccion" id="direccion-label">Dirección</label>
-                            <input class="inputs" type="tel" name="direccion" id="direccion"
+                            <input class="inputs" type="text" name="direccion" id="direccion"
                                 placeholder="Escribe tu direccion" required>
                             <!-- ENTRADA DE COMENTARIOS -->
                             <label class="labels" for="comentarios" id="comentarios-label">Comentarios</label>
                             <textarea class="textarea" name="comentarios" id="comentarios"
-                                placeholder="Escribe tus comentarios" rows="4" required></textarea>
+                                placeholder="Escribe tus comentarios" rows="4"></textarea>
 
                             <!-- BOTON COTIZACIÓN -->
                             <input type="submit" value="Solicitar cotización" class="btn btn-reserva btn-solicitud" id="btn-cotizar">
@@ -140,15 +139,28 @@
                     </div>
                 </div>
 
+                <!-- CARDBACK DE RESERVACIÖN -->
+                <section class="card__back" id="cardBack">
+                    <div class="card__back--container">
+                        <img src="images/icon-check.svg" alt="icon-check" class="icon__check">
+    
+                        <p class="card__title">Gracias por tu reserva</p>
+    
+                        <p class="card__description">
+                            En breve nos pondremos en contacto contigo para confirmar la reservación solicitada.
+                            Espero tengas buen viaje te desea <span class="destinos--span">Destinos Express</span>, tu transportadora de confianza.
+                        </p>
+    
+                        <button type="submit" class="btn-confimacion" id="btnConfirma">Salir</button>
+                    </div>
+                </section>
 
                 <!-- MODAL DE LÍNEA HONESTA -->
-
                 <div class="modal__reserva" id="modal-honesta">
-
                     <div class="modal__reserva--container">
                         <h2 class="reserva__title center">Línea honesta</h2>
                         <p class="reserva__paragraph center">Denuncias relacionadas con conductas deshonestas</p>
-                        <form action="#" method="post" class="form__reserva">
+                        <form action="" class="form__reserva from__linea">
 
                             <!-- ENTRADA DE SELECCION TIPO DE SERVICIO -->
                             <label class="labels" for="asunto" id="asunto-label">Asunto</label>
@@ -218,7 +230,7 @@
                                 Estoy de acuerdo con los términos y condiciones
                             </label>
 
-                            <!-- BOTON COTIZACIÓN -->
+                            <!-- BOTON SOLICITUD -->
                             <input type="submit" value="Enviar Reporte" class="btn btn-reserva btn-solicitud" id="btn-observacion">
                         </form>
 
@@ -228,10 +240,28 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- CARDBACK DE RESERVACIÖN -->
+                <section class="card__back" id="cardBack">
+                    <div class="card__honesta">
+                        <img src="images/icon-soporte.png" alt="icon-support" class="icon__check">
+    
+                        <p class="card__title">Gracias por tu información</p>
+    
+                        <p class="card__description">
+                            En breve nos pondremos en contacto contigo para dar soporte a tu problema.
+                            Trabajaremos rápido para brindarte soluciones <span class="destinos--span">Destinos Express</span>, tu transportadora de confianza.
+                        </p>
+    
+                        <button type="submit" class="btn-confimacion" id="btnGracias">Gracias</button>
+                    </div>
+                </section>
+
+                
             </div>
 
 
-
+            <!-- MENÚ -->
             <a href="#" class="box__model" id="hamburger">
                 <img src="images/icon-hamburger.svg" alt="icon-hamburger" class="icon__hamburger " title="Menú">
             </a>
@@ -240,6 +270,7 @@
 
     <main class="main">
         <div class="main__container container">
+            
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio non magni maxime architecto! Sunt saepe
             aliquid asperiores accusamus! Placeat officia voluptatum ipsum et, eligendi saepe debitis ratione velit illo
             culpa.

@@ -12,6 +12,7 @@
     --PaddingContent: 3.72rem 0;
     --Gap: 1rem;
     --red: hsl(4, 76%, 54%);
+    --textGray: hsl(0, 0%, 48%);
 
 }
 
@@ -215,6 +216,7 @@ body {
     letter-spacing: 1px;
     font-size: .86em;
     font-family: var(--ff-Montserrat);
+    cursor: pointer;
 }
 
 .btn-reserva{
@@ -260,6 +262,8 @@ body {
     max-width: 900px;
     margin: auto;
 }
+
+
 
 .content__list{
     position: relative;
@@ -360,6 +364,104 @@ body {
     align-items: start;
     gap: .3rem;
     font-size: .89em;
+}
+
+
+
+/* ESTILO CARD BACK MENSAJE FINAL */
+
+.card__back{
+    height: 100vh;
+    display: grid;
+}
+
+.card__back--container{
+    background-color: var(--White);
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 0.4s 0.5s;
+    transform: translateY(-100vh);
+    transition: transform 0.5s;
+}
+.card__honesta{
+    background-color: var(--White);
+    text-align: center;
+    display: grid;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #eee;
+    border-radius: 1rem;
+    max-width: 400px;
+    opacity: 0;
+    transition: opacity 0.4s 0.5s;
+    transform: translateY(-300vh);
+    transition: transform 0.5s;
+}
+
+.card__honesta--active{
+    opacity: 1;
+    transition: opacity 0.5s 0.3s;
+    pointer-events: unset;
+    transform: translateY(-100vh);
+    transition: transform .5s ;
+    z-index: 9999;
+}
+.card__back--active{
+    opacity: 1;
+    transition: opacity 0.5s 0.3s;
+    pointer-events: unset;
+    transform: translateY(0vh);
+    transition: transform .5s ;
+    z-index: 9999;
+}
+
+.info{
+    z-index: 999;
+}
+
+.icon__check{
+    width: 70px;
+    margin: 1rem auto 0 auto;
+}
+
+.card__title{
+    font-size: 1em;
+    font-family: var(--ff-Montserrat);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card__description{
+    color: var(--textGray);
+    font-size: .8em;
+    line-height: 1.7;
+}
+
+.btn-confimacion{
+    border: none;
+    background-color: #F77F00;
+    padding: .5rem;
+    border-radius: .5rem;
+    color: var(--White);
+    width: 50%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.destinos--span{
+    font-family: var(--ff-Montserrat);
+    font-weight: 700;
+    color: var(--Black);
 }
 
 /* MAIN */
