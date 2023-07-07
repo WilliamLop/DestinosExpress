@@ -33,13 +33,15 @@ hamburgerLink.addEventListener('click', (e) => {
 function filtersAdd() {
     logo.classList.add('filters');
     main.classList.add('filters');
-
+    modal.classList.add('filters');
+    
 }
 
 //Función para remover filtros
 function filtersRemove() {
     logo.classList.remove('filters');
     main.classList.remove('filters');
+    modal.classList.remove('filters');
 
 }
 
@@ -145,7 +147,6 @@ const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
 
 // MODAL
-
 const modal = document.querySelector('.modal__reserva');
 const modalHonesta = document.getElementById('modal-honesta');
 const closeModal = document.getElementById('close-modal');
@@ -240,11 +241,11 @@ function changeColorIcons(){
 
     iconClose.forEach((closeIcon) => {
         closeIcon.addEventListener('mouseover', () => {
-            closeIcon.setAttribute('src', './images/icon-close-red.svg');
+            closeIcon.setAttribute('src', '../images/icon-close-red.svg');
             closeIcon.classList.add('icon-close-active');
         });
         closeIcon.addEventListener('mouseout', () => {
-            closeIcon.setAttribute('src', './images/icon-close-modal.svg');
+            closeIcon.setAttribute('src', '../images/icon-close-modal.svg');
             closeIcon.classList.remove('icon-close-active');
         });
     });

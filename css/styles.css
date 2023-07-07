@@ -367,6 +367,13 @@ body {
 .main {
     position: relative;
     z-index: -9;
+    min-height: 100vh;
+}
+
+.main__container{
+    position: absolute;
     background-color: transparent;
     top: 100px;
+    left: 0;
+    right: 0;
 }
