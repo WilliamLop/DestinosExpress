@@ -6,6 +6,7 @@ const iconHamburger = document.querySelector('.icon__hamburger');
 const logo = document.querySelector('.logo__img');
 const titleDestinos = document.querySelector('.header__title');
 const main = document.querySelector('.main');
+const navContainer = document.querySelector('.nav__container');
 
 console.log(iconHamburger);
 
@@ -19,10 +20,13 @@ hamburgerLink.addEventListener('click', (e) => {
     if (navMenu.classList.contains('nav__header--active')) {
         iconHamburger.setAttribute('src', './images/icon-close-menu.svg');
         filtersAdd();
+        navContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.644)';
     } else {
         iconHamburger.setAttribute('src', './images/icon-hamburger.svg');
         filtersRemove();
-        modal.classList.remove('modal__reserva--show')
+        modal.classList.remove('modal__reserva--show');
+        modalHonesta.classList.remove('modal__reserva--show');
+        navContainer.style.backgroundColor = 'transparent';
     }
 });
 
@@ -61,6 +65,8 @@ const serviciosLink = document.querySelector('.link__servicios');
 const serviciosDrop = document.querySelector('.link__servicios--drop');
 const arrow = document.querySelector('.icon__arrow');
 const links = document.querySelector('.nav__link');
+const navList = document.querySelector('.nav__list');
+
 
 let isDropdownOpen = false;
 
@@ -72,6 +78,7 @@ function showDropdown() {
     serviciosDrop.classList.add('show');
     arrow.classList.add('rotate');
     serviciosLink.style.color = 'hsl(40, 100%, 64%)';
+
     isDropdownOpen = true;
 };
 
@@ -167,12 +174,16 @@ closeModalHonesta.addEventListener('click', () => {
 });
 
 
-reservar.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del evento touchstart
+reservar.addEventListener('mousedown', (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del evento mousedown
     modal.classList.add('modal__reserva--show');
 });
 
-lineaHonesta.addEventListener('touchstart', (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del evento touchstart
+lineaHonesta.addEventListener('mousedown', (event) => {
+    event.preventDefault(); // Evita el comportamiento predeterminado del evento mousedown
     modalHonesta.classList.add('modal__reserva--show');
+});
+
+modalContent.addEventListener('mousedown', (event) => {
+    event.stopPropagation(); // Evita que el evento mousedown se propague al contenedor principal
 });
