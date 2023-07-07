@@ -186,7 +186,7 @@ body {
     font-weight: 700;
     z-index: 99;
     position: absolute;
-    top: 5.2%;
+    top: 3.9%;
     font-size: 1em;
     left: 10%;
     text-transform: uppercase;
@@ -200,6 +200,9 @@ body {
     padding-bottom: .5rem;
     
 }
+
+
+/* BOTONES */
 
 .btn{
     margin-top: 1rem;
@@ -222,6 +225,11 @@ body {
     font-family: var(--ff-Montserrat);
     color: var(--White);
     border: 1px solid var(--VeryYellow);
+}
+
+.btn-solicitud{
+    border: none;
+    padding: .9rem 0;    
 }
 
 
@@ -280,6 +288,7 @@ body {
     border: 1px solid #929292;
     padding: .5rem;
     border-radius: .3rem;
+    pointer-events: none;
 }
 
 .labels{
@@ -299,13 +308,11 @@ body {
     margin-top: 2rem;
 }
 
-.btn-cotizar{
-    border: none;
-    margin-top: 1.4rem;
-}
+
 
 .reserva__title{
     font-family: var(--ff-Montserrat);
+    margin-top: 1rem;
 }
 
 
