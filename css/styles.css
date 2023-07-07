@@ -40,7 +40,7 @@ body {
 
 .grid-content {
     display: grid;
-    gap: 2rem;
+    gap: 1.2rem;
 }
 
 .container {
@@ -71,6 +71,11 @@ body {
     width: 50px;
 }
 
+.nav__container{
+    background-color: red;
+    width: 100%;
+   
+}
 
 .nav__header {
     box-sizing: border-box;
@@ -80,7 +85,7 @@ body {
     right: 0;
     bottom: 0;
     height: 100vh;
-    width: 80%;
+    width: 70%;
     clip-path: circle(0.0% at 100% 0);
     transition: clip-path .5s;    
 }
@@ -119,10 +124,11 @@ body {
     gap: .5rem;
     color: var(--White);
     transition: color .6s;
+    font-size: .9em;
 }
 
 .nav__item{
-    padding: .6rem 0;
+    padding-bottom: .5rem;
 }
 
 .nav__list li:nth-child(-n+2){
@@ -149,9 +155,7 @@ body {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    transition: max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;
-    padding: .5rem 0 .5rem 2rem;
-    
+    transition: max-height 0.6s ease-in-out, opacity 0.5s ease-in-out;    
 }
 
 .link__servicios--drop .nav__link {
@@ -175,8 +179,8 @@ body {
     font-weight: 700;
     z-index: 99;
     position: absolute;
-    top: 3%;
-    font-size: 1.2em;
+    top: 5.2%;
+    font-size: 1em;
     left: 10%;
     text-transform: uppercase;
 }
@@ -186,21 +190,22 @@ body {
 .formularios__container{
     width: 80%;
     display: grid;
+    align-self: end !important;
     place-self: end;
     gap: 1rem;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
     
 }
 
 .btn{
-    padding: 1rem;
+    padding: .5rem 1rem;
     justify-content: start;
     border-radius: .5rem;
     color: var(--Black);
     font-weight: 600;
     letter-spacing: 1px;
-    font-size: 1em;
+    font-size: .86em;
     font-family: var(--ff-Montserrat);
 }
 
@@ -209,6 +214,8 @@ body {
 }
 
 .btns{
+    font-weight: 600;
+    font-family: var(--ff-Montserrat);
     color: var(--White);
     border: 1px solid var(--VeryYellow);
 }

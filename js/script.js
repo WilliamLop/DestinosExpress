@@ -163,19 +163,3 @@ lineaHonesta.addEventListener('click', () => {
 closeModalHonesta.addEventListener('click', () => {
     modalHonesta.classList.remove('modal__reserva--show');
 });
-
-reservar.addEventListener('touchstart', () => {
-    modal.classList.add('modal__reserva--show');
-});
-
-closeModal.addEventListener('touchstart', () => {
-    modal.classList.remove('modal__reserva--show');
-});
-
-lineaHonesta.addEventListener('touchstart', () => {
-    modalHonesta.classList.add('modal__reserva--show');
-});
-
-closeModalHonesta.addEventListener('touchstart', () => {
-    modalHonesta.classList.remove('modal__reserva--show');
-});
