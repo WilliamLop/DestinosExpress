@@ -129,7 +129,7 @@ serviciosLink.addEventListener('touchstart', (event) => {
     event.preventDefault();
     if (isMobile) {
         toggleDropdown();
-    }    
+    }
 });
 
 document.addEventListener('click', (event) => {
@@ -158,34 +158,18 @@ console.log(modalHonesta);
 
 
 
-
-reservar.addEventListener('click', () => {
+reservar.addEventListener('touchstart', () => {
     modal.classList.add('modal__reserva--show');
 });
 
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener('touchstart', () => {
     modal.classList.remove('modal__reserva--show');
 });
 
-lineaHonesta.addEventListener('click', () => {
-    modalHonesta.classList.add('modal__reserva--show');
+navContainer.addEventListener('touchstart', (event) => {
+    event.stopPropagation();
 });
 
-closeModalHonesta.addEventListener('click', () => {
-    modalHonesta.classList.remove('modal__reserva--show');
-});
-
-
-reservar.addEventListener('mousedown', (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del evento mousedown
-    modal.classList.add('modal__reserva--show');
-});
-
-lineaHonesta.addEventListener('mousedown', (event) => {
-    event.preventDefault(); // Evita el comportamiento predeterminado del evento mousedown
-    modalHonesta.classList.add('modal__reserva--show');
-});
-
-modalContent.addEventListener('mousedown', (event) => {
-    event.stopPropagation(); // Evita que el evento mousedown se propague al contenedor principal
+modalContent.addEventListener('touchstart', (event) => {
+    event.stopPropagation();
 });
