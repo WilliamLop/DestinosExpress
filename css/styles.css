@@ -288,7 +288,8 @@ body {
     border: 1px solid #929292;
     padding: .5rem;
     border-radius: .3rem;
-    pointer-events: none;
+    pointer-events: auto;
+    
 }
 
 .labels{
@@ -306,6 +307,7 @@ body {
     display: grid;
     gap: 1rem;
     margin-top: 2rem;
+    pointer-events: none;
 }
 
 
