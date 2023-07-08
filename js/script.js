@@ -18,7 +18,6 @@ hamburgerLink.addEventListener('click', (e) => {
     if (navMenu.classList.contains('nav__header--active')) {
         iconHamburger.setAttribute('src', './images/icon-close-menu.svg');
         filtersAdd();
-        navContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.644)';
     } else {
         iconHamburger.setAttribute('src', './images/icon-hamburger.svg');
         filtersRemove();
@@ -41,7 +40,7 @@ function filtersAdd() {
 function filtersRemove() {
     logo.classList.remove('filters');
     main.classList.remove('filters');
-    navMenu.classList.remove('filters');
+    // navMenu.classList.remove('filters');
 
 }
 
@@ -79,7 +78,7 @@ function showDropdown() {
     serviciosContainer.classList.add("show");
     serviciosDrop.classList.add('show');
     arrow.classList.add('rotate');
-    serviciosLink.style.color = 'hsl(40, 100%, 64%)';
+    serviciosLink.style.color = '#FF9F1C';
 
     isDropdownOpen = true;
 };
@@ -161,11 +160,15 @@ function modalClicks() {
     reservar.addEventListener('click', () => {
         modal.classList.add('modal__reserva--show');
         navMenu.classList.add('filters');
+        navContainer.style.backgroundColor = '#171717';
+
     });
 
     closeModal.addEventListener('click', () => {
         modal.classList.remove('modal__reserva--show');
         navMenu.classList.remove('filters');
+        navContainer.style.backgroundColor = 'inherit';
+
     });
 
     lineaHonesta.addEventListener('click', () => {
@@ -182,11 +185,14 @@ function modalClicks() {
 function modalTouch() {
     reservar.addEventListener('touchstart', () => {
         modal.classList.add('modal__reserva--show');
+        navContainer.style.backgroundColor = '#171717';
+
     });
 
     closeModal.addEventListener('touchstart', () => {
-        modal.classList.remove('modal__reserva--show');
+        modal.classListback.remove('modal__reserva--show');
         navMenu.classList.remove('filters');
+        navContainer.style.backgroundColor = 'inherit';
 
     });
 
@@ -217,8 +223,11 @@ const btnCotizar = document.getElementById('btn-cotizar');
 const btnObservacion = document.getElementById('btn-observacion');
 const backCard = document.querySelector('.card__back--container');
 const backCardLinea = document.querySelector('.card__honesta');
+const cardBack = document.querySelector('.card__back');
 const btnSalir = document.getElementById('btnConfirma');
 const btnGracias = document.getElementById('btnGracias');
+
+console.log(cardBack);
 
 
 function resertForm(){
@@ -247,18 +256,12 @@ btnCotizar.addEventListener('click', (e) => {
     }
 });
 
-
-// Funcion de mostrar los filtros
-// function stylesModalShow(){
-//     navMenu.classList.add('filters');
-//     iconHamburger.classList.add('filters');
-// }
-
 // Funcion para mostrar la  confirmacion de reserva
 function showModalConfirmationReserva() {
     // Muestra la modal de confirmación
     modal.classList.remove('modal__reserva--show');
     backCard.classList.add('card__back--active');
+    cardBack.classList.add('position')
     navMenu.classList.add('filters');
     iconHamburger.classList.add('filters');
     console.log('Entras a cotizar');
@@ -270,15 +273,19 @@ btnSalir.addEventListener('click', (e) => {
     backCard.classList.remove('card__back--active');
     navMenu.classList.remove('filters');
     iconHamburger.classList.remove('filters');
+    navContainer.style.backgroundColor = 'inherit';
+    cardBack.classList.remove('position')
     resertForm();
 
 });
 
+// Evento para salir de la tarjeta de reportes y quitar estilos
 btnGracias.addEventListener('click', (e) => {
     e.preventDefault();
     backCardLinea.classList.remove('card__honesta--active');
     navMenu.classList.remove('filters');
     iconHamburger.classList.remove('filters');
+    navContainer.style.backgroundColor = 'inherit';
     resertForm();
 
 });

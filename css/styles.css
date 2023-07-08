@@ -7,12 +7,15 @@
     --VeryYellow: hsl(40, 100%, 64%);
     --Yellow: hsl(33, 100%, 55%);
     --Darkgray: hsla(0, 0%, 48%, 0.151);
-    --Black: hsl(0, 8%, 14%);
+    --Black: hsl(0, 0%, 13%);
     --White: hsl(0, 0%, 100%);
     --PaddingContent: 3.72rem 0;
     --Gap: 1rem;
     --red: hsl(4, 76%, 54%);
     --textGray: hsl(0, 0%, 48%);
+    --oro: hsl(49, 61%, 59%);
+    --elegantGray: hsl(285, 2%, 40%);
+    --whiteligth: hsl(260, 2%, 72%);
 
 }
 
@@ -101,7 +104,7 @@ body {
     border-radius: 2rem 0rem 0rem 2rem;
     clip-path: circle(141.2% at 0 100%);
     transition: clip-path 1s;
-    filter: drop-shadow(2px 2px 3px #cacaca);
+    filter: drop-shadow(2px 2px 4px var(--elegantGray));
 }
 
 
@@ -119,7 +122,7 @@ body {
 .filters {
     transition: filter .6s ease-in-out;
     filter: blur(1px) brightness(60%) saturate(120%);
-    background-color: var(--LightDark);
+    background-color: var(--Black);
 }
 
 
@@ -168,6 +171,7 @@ body {
 
 .link__servicios--drop .nav__link {
     font-size: .8em;
+    padding-top: .6rem;
     
 }
 
@@ -210,7 +214,7 @@ body {
     margin-top: 1rem;
     padding: .7rem 1rem;
     justify-content: start;
-    border-radius: .5rem;
+    border-radius: .2rem;
     color: var(--Black);
     font-weight: 600;
     letter-spacing: 1px;
@@ -219,31 +223,56 @@ body {
     cursor: pointer;
 }
 
-.btn-reserva{
-    background-color: var(--Yellow);
-}
 
 .btns{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--ff-Montserrat);
     color: var(--White);
-    border: 1px solid var(--VeryYellow);
+    border: 1px solid var(--whiteligth);
+    transition: .5s ease-in-out;
 }
 
 .btn-solicitud{
     border: none;
-    padding: .9rem 0;    
+    padding: .9rem 0;
+    background-color: transparent; 
+    border: 1px solid var(--White);   
+    transition: .5s ease-in-out;
+    color: var(--whiteligth);
+    
+}
+
+.btn-solicitud:hover,
+.filebtn:hover{
+    border: 1px solid var(--Yellow);   
+    background-color: var(--Yellow);
+    color: var(--Black);
 }
 
 #btn-cotizar{
     pointer-events: auto;
 }
 
+.btns:hover{
+    background-color: var(--elegantGray);
+    color: var(--White);
+}
+
+.filebtn{
+    border: 1px solid var(--whiteligth);
+    padding: .5rem;
+    color: var(--White);
+    font-size: .9em;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+
+}
+
 
 /* MODAL DE BOTON RESERVAR */
 
 .modal__reserva{
-    background-color: var(--White);
+    /* background-color: var(--White); */
     position: fixed;
     top: 20px;
     bottom: 20px;
@@ -252,7 +281,7 @@ body {
     right: 5%;
     border-radius: .5rem;
     padding: 3.5rem 1.3rem;
-    filter: drop-shadow(2px 2px 4px #1b1b1b81);
+    filter: drop-shadow(2px 2px 4px var(--elegantGray));
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.4s 0.5s;
@@ -261,6 +290,9 @@ body {
     overflow-y: auto;
     max-width: 900px;
     margin: auto;
+    background-color: hsl(0, 0%, 9%);
+    color: var(--whiteligth);
+
 }
 
 
@@ -302,7 +334,7 @@ body {
 .inputs,
 .selected,
 .textarea{
-    border: 1px solid #929292;
+    border: 1px solid var(--White);
     padding: .5rem;
     border-radius: .3rem;
     pointer-events: auto;
@@ -312,19 +344,30 @@ body {
 .inputs:focus,
 .selected:focus,
 .textarea:focus{
-    outline-color: #ffbf69;
-   
+    outline: none;
+}
+
+.inputs:focus-visible,
+.selected:focus-visible,
+.textarea:focus-visible{
+    color: var(--Yellow);
+}
+
+
+.inputs::placeholder,
+.selected::placeholder,
+.textarea::placeholder{
+    color: var(--whiteligth);
 }
 
 .labels{
-    font-weight: 600;
+    font-weight: 400;
     font-family: var(--ff-Montserrat);
     position: relative;
     top: 10px;
-    border-bottom: 1px solid #ffbf69;
     padding: .3rem;
     width: 150px;
-    color: var(--Black);
+    color: var(--White);
 }
 
 .form__reserva{
@@ -337,7 +380,13 @@ body {
 
 .reserva__title{
     font-family: var(--ff-Montserrat);
-    margin-top: 1rem;
+    margin: 1rem auto;
+    color: var(--White);
+}
+
+.reserva__paragraph{
+    font-size: .9em;
+
 }
 
 
@@ -355,8 +404,9 @@ body {
     border-radius: .3rem 0 .2rem 0;
 }
 .checkbox:checked{
-    transition: .7s ease-in-out;
-    background-color: hsl(28, 87%, 62%);
+    transition: .4s ease;
+    background-color: var(--Yellow);
+    border: 1px solid var(--White);
 }
 
 .checkbox-lab{
@@ -374,39 +424,44 @@ body {
     height: 100vh;
     display: grid;
 }
-
+.position{
+    position: relative;
+}
 .card__back--container{
-    background-color: var(--White);
+    background-color: var(--Black);
     text-align: center;
     display: grid;
     gap: 1.5rem;
     padding: 2rem 1rem;
     width: 80%;
     margin: auto;
-    border: 1px solid #eee;
     border-radius: 1rem;
     max-width: 400px;
     opacity: 0;
     transition: opacity 0.4s 0.5s;
     transform: translateY(-100vh);
     transition: transform 0.5s;
+    filter: drop-shadow(2px 2px 6px #eeeeee25);
+    border: 1px solid var(--VeryDark);
 }
 .card__honesta{
-    background-color: var(--White);
+    background-color: var(--Black);
     text-align: center;
     display: grid;
     gap: 1.5rem;
     padding: 2rem 1rem;
     width: 80%;
     margin: auto;
-    border: 1px solid #eee;
     border-radius: 1rem;
     max-width: 400px;
     opacity: 0;
     transition: opacity 0.4s 0.5s;
     transform: translateY(-300vh);
     transition: transform 0.5s;
+    filter: drop-shadow(2px 2px 6px #eeeeee25);
+    border: 1px solid var(--VeryDark);
 }
+
 
 .card__honesta--active{
     opacity: 1;
@@ -414,7 +469,7 @@ body {
     pointer-events: unset;
     transform: translateY(-100vh);
     transition: transform .5s ;
-    z-index: 9999;
+    z-index: 99;
 }
 .card__back--active{
     opacity: 1;
@@ -422,12 +477,10 @@ body {
     pointer-events: unset;
     transform: translateY(0vh);
     transition: transform .5s ;
-    z-index: 9999;
+    z-index: 99;
+    
 }
 
-.info{
-    z-index: 999;
-}
 
 .icon__check{
     width: 70px;
@@ -439,29 +492,35 @@ body {
     font-family: var(--ff-Montserrat);
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--White);
 }
 
 .card__description{
-    color: var(--textGray);
+    color: var(--whiteligth);
     font-size: .8em;
     line-height: 1.7;
 }
 
 .btn-confimacion{
-    border: none;
-    background-color: #F77F00;
     padding: .5rem;
-    border-radius: .5rem;
     color: var(--White);
     width: 50%;
     margin: auto;
     cursor: pointer;
+    border: 1px solid var(--whiteligth);
+    transition: .5s ease-in-out;
+    border-radius: .3rem;
+}
+
+.btn-confimacion:hover{
+    background-color: var(--Yellow);
+    border: 1px solid var(--Yellow);
 }
 
 .destinos--span{
     font-family: var(--ff-Montserrat);
     font-weight: 700;
-    color: var(--Black);
+    color: var(--Yellow);
 }
 
 /* MAIN */
@@ -479,3 +538,6 @@ body {
     left: 0;
     right: 0;
 }
+
+/* Agrego media Query */
+

@@ -56,7 +56,7 @@
         
                         <div class="formularios__container">
                             <!-- FORMULARIO DE RESERVA -->
-                            <a href="#" class="btn btn-reserva" id="reserva">Reservar</a>
+                            <a href="#" class="btn btn-reserva btns" id="reserva">Reservar</a>
                             <a href="#" class="btn btns" id="linea-honesta">Línea Honesta</a>
                             <a href="https://clientesdestinos.tmovil.co/js/" class="btn btns" target="_blank">Afiliados</a>
                         </div>
@@ -64,6 +64,7 @@
     
                 </nav>
 
+    
                 <!-- MODAL DE RESERVA -->
                 <div class="modal__reserva" id="modal-reserva">
                     <div class="modal__reserva--container">
@@ -201,7 +202,7 @@
 
                             <!-- ENTRADA DE ARCHIVO -->
                             <label for="file" class="labels" id="file-label">Seleccionar archivo</label>
-                            <input type="file" name="file" id="file" accept=".jpg, .png, .pdf" required>
+                            <input type="file" name="file" id="file" class="filebtn" accept=".jpg, .png, .pdf" required>
 
                             <!-- ENTRADA DE DECISION -->
                             <label for="checkbox" class="checkbox-lab" id="checkbox-label">
@@ -216,8 +217,7 @@
 
                             <!-- ENTRADA DE TELEFONO -->
                             <label class="labels" for="phone" id="phone-label">Celular</label>
-                            <input class="inputs" type="tel" name="phone" id="phone" placeholder="Número de celular"
-                                required>
+                            <input class="inputs"  type="tel" name="phone" id="phone" placeholder="Número de celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" required>
 
                             <!-- ENTRADA DE EMAIL -->
                             <label class="labels" for="email" id="email-label">Email</label>
@@ -241,7 +241,7 @@
                     </div>
                 </div>
 
-                <!-- CARDBACK DE RESERVACIÖN -->
+                <!-- CARDBACK DE SOPORTE -->
                 <section class="card__back" id="cardBack">
                     <div class="card__honesta">
                         <img src="images/icon-soporte.png" alt="icon-support" class="icon__check">
@@ -256,7 +256,6 @@
                         <button type="submit" class="btn-confimacion" id="btnGracias">Gracias</button>
                     </div>
                 </section>
-
                 
             </div>
 
