@@ -256,6 +256,11 @@ btnCotizar.addEventListener('click', (e) => {
     }
 });
 
+btnCotizar.addEventListener('touchstart', () => {
+
+    showModalConfirmationReserva();
+});
+
 // Funcion para mostrar la  confirmacion de reserva
 function showModalConfirmationReserva() {
     // Muestra la modal de confirmación
